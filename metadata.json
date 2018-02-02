@@ -1,0 +1,60 @@
+{
+  "name": "jacobhenner-cntlm",
+  "version": "0.1.0",
+  "author": "Jacob Henner",
+  "summary": "Installs and configures cntlm, the NTLM authenticating HTTP proxy.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/JacobHenner/puppet-cntlm",
+  "project_page": "https://github.com/JacobHenner/puppet-cntlm",
+  "issues_url": "https://github.com/JacobHenner/puppet-cntlm/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 6.0.0"
+    }
+  ],
+  "pdk-version": "1.3.2",
+  "template-url": "https://github.com/puppetlabs/pdk-templates",
+  "template-ref": "1.3.2-0-g07678c8"
+}

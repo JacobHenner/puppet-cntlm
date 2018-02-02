@@ -1,0 +1,91 @@
+# Cntlm Authentication Proxy Configuration
+
+# Important: Do not modify manually, configuration is being enforced by Puppet.
+
+Username	<%= $cntlm::cntlm_username %>
+Domain		<%= $cntlm::cntlm_domain %>
+<% unless $cntlm::cntlm_password =~ Undef { -%>
+Password	<%= $cntlm::cntlm_password %>
+<% } -%>
+<% unless $cntlm::cntlm_passlm =~ Undef { -%>
+PassLM	<%= $cntlm::cntlm_passlm %>
+<% } -%>
+<% unless $cntlm::cntlm_passnt =~ Undef { -%>
+PassNT	<%= $cntlm::cntlm_passnt %>
+<% } -%>
+<% unless $cntlm::cntlm_passntlmv2 =~ Undef { -%>
+PassNTLMv2	<%= $cntlm::cntlm_passntlmv2 %>
+<% } -%>
+
+<% unless $cntlm::cntlm_workstation =~ Undef { -%>
+Workstation	<%= $cntlm::cntlm_workstation %>
+<% } -%>
+
+<% unless $cntlm::cntlm_proxy =~ Undef { -%>
+<% $cntlm::cntlm_proxy.each |$proxy| { -%>
+Proxy <%= $proxy %>
+<% } -%>
+<% } -%>
+
+<% unless $cntlm::cntlm_noproxy =~ Undef { -%>
+NoProxy	<%= $cntlm::cntlm_noproxy %>
+<% } -%>
+
+<% unless $cntlm::cntlm_listen =~ Undef { -%>
+Listen	<%= $cntlm::cntlm_listen %>
+<% } -%>
+
+<% unless $cntlm::cntlm_socks5proxy =~ Undef { -%>
+<% $cntlm::cntlm_socks5proxy.each |$socks5proxy| { -%>
+SOCKS5Proxy <%= $socks5proxy %>
+<% } -%>
+<% } -%>
+
+<% unless $cntlm::cntlm_socks5user =~ Undef { -%>
+<% $cntlm::cntlm_socks5user.each |$socks5user| { -%>
+SOCKS5User <%= $socks5user %>
+<% } -%>
+<% } -%>
+
+<% unless $cntlm::cntlm_auth =~ Undef { -%>
+Auth	<%= $cntlm::cntlm_auth %>
+<% } -%>
+<% unless $cntlm::cntlm_flags =~ Undef { -%>
+Flags	<%= $cntlm::cntlm_flags %>
+<% } -%>
+
+<% if $cntlm::cntlm_gateway { -%>
+Gateway	yes
+<% } -%>
+
+<% unless $cntlm::cntlm_allow =~ Undef { -%>
+<% $cntlm::cntlm_allow.each |$allow| { -%>
+Allow <%= $allow %>
+<% } -%>
+<% } -%>
+<% unless $cntlm::cntlm_deny =~ Undef { -%>
+<% $cntlm::cntlm_deny.each |$deny| { -%>
+Deny <%= $deny %>
+<% } -%>
+<% } -%>
+
+<% unless $cntlm::cntlm_isascannersize =~ Undef { -%>
+ISAScannerSize	<%= $cntlm::cntlm_isascannersize %>
+<% } -%>
+<% unless $cntlm::cntlm_isascanneragent =~ Undef { -%>
+<% $cntlm::cntlm_isascanneragent.each |$isascanneragent| { -%>
+ISAScannerAgent <%= $isascanneragent %>
+<% } -%>
+<% } -%>
+
+<% unless $cntlm::cntlm_header =~ Undef { -%>
+<% $cntlm::cntlm_header.each |$header| { -%>
+Header <%= $header %>
+<% } -%>
+<% } -%>
+
+<% unless $cntlm::cntlm_tunnel =~ Undef { -%>
+<% $cntlm::cntlm_tunnel.each |$tunnel| { -%>
+Tunnel <%= $tunnel %>
+<% } -%>
+<% } -%>
