@@ -25,7 +25,17 @@ If you intend to use this module to install cntlm, please ensure any optional re
 
 ### Beginning with cntlm
 
-`include cntlm` should be sufficient to install , configure, and start the service, assuming a valid combination of parameters is included in hiera.
+To install and configure cntlm with some basic settings:
+
+```puppet
+class { 'cntlm':
+  cntlm_username => 'test_user',
+  cntlm_domain   => 'test_domain',
+  cntlm_password => 'test_password',
+  cntlm_proxy    => ['localhost:8080'],
+}
+```
+All cntlm settings are configurable via cntlm_&lt;lowercase_param_name&gt;.
 
 ## Reference
 
@@ -43,11 +53,13 @@ If you intend to use this module to install cntlm, please ensure any optional re
 
 ### Parameters
 
-For more information about this module's parameters, generate the [_puppet strings_](https://github.com/puppetlabs/puppet-strings) documentation using `puppet strings` and view docs/index.html
+For more information about this module's parameters, generate the [_puppet strings_](https://github.com/puppetlabs/puppet-strings) documentation using `puppet strings` and view doc/puppet_classes/cntlm.html
 
 ## Limitations
 
-This module has only been tested on CentOS 7, Debian Stretch and Ubuntu Xenial. Support for other platforms is possible by overriding default configuration values using hiera.  
+This module has only been tested on CentOS 7, Debian Stretch and Ubuntu Xenial. Support for other platforms is possible by overriding default configuration values.
+
+Pre-hashed passwords must be supplied to the module's hashed password parameters. The module does not perform automatic hashing of cleartext passwords.
 
 ## Development
 

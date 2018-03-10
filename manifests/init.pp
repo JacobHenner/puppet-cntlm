@@ -5,7 +5,12 @@
 # @summary Installs, configures, and runs the cntlm service, for NTLM authenticated proxying.
 #
 # @example
-#   include cntlm
+#   class { 'cntlm':
+#       cntlm_username => 'test_user',
+#       cntlm_domain   => 'test_domain',
+#       cntlm_password => 'test_password',
+#       cntlm_proxy    => ['localhost:8080'],
+#   }
 #
 # @param package_manage Whether to manage the cntlm package. Default value: true
 # @param package_name Specifies the cntlm package to manage. Default value: 'cntlm'
