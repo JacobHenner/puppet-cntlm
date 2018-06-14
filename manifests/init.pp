@@ -29,7 +29,7 @@
 # @param cntlm_workstation The netbios hostname cntlm will send to the parent proxies. If unset, the value is auto-guessed by cntlm.
 # @param cntlm_proxy A list of parent proxies to use in format ['proxy_ip:proxy_port', ...]
 # @param cntlm_noproxy A comma separated list of addresses that will not be passed through parent proxyies. * and ? wildcards can be used.
-# @param cntlm_listen The port cntlm should listen on. Can also specify a specific interface and port to bind to, using 'ip:port'.
+# @param cntlm_listen The port cntlm should listen on. Can also specify multiple specific interface and port to bind to, using 'ip:port'.
 # @param cntlm_socks5proxy A list of interfaces and ports to bind to for SOCKS5 proxy functionality,  in format ['ip:port', ...]
 # @param cntlm_socks5user A list of username:password pairs for permissioning access to the SOCKS5 proxy. If unset, the SOCKS5 proxy will accept all requests.
 # @param cntlm_auth The authentication mode to use.
@@ -59,7 +59,7 @@ class cntlm (
     Optional[String] $cntlm_workstation,
     Array[String] $cntlm_proxy,
     Optional[String] $cntlm_noproxy,
-    Optional[String] $cntlm_listen,
+    Optional[Array] $cntlm_listen,
     Optional[Array] $cntlm_socks5proxy,
     Optional[Array] $cntlm_socks5user,
     Optional[String] $cntlm_auth,
