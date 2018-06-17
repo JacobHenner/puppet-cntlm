@@ -28,12 +28,12 @@ Proxy <%= $proxy %>
 <% } -%>
 <% } -%>
 <% unless $cntlm::cntlm_noproxy =~ Undef { -%>
-NoProxy	<%= $cntlm::cntlm_noproxy %>
+NoProxy <%= $cntlm::cntlm_noproxy.join(', ') %>
 
 <% } -%>
 <% unless $cntlm::cntlm_listen =~ Undef { -%>
 <% $cntlm::cntlm_listen.each |$listen| { -%>
-Listen	<%= $listen %>
+Listen <%= $listen %>
 <% } -%>
 
 <% } -%>
