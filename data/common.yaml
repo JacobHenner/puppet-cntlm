@@ -15,7 +15,8 @@ cntlm::cntlm_passnt: ~
 cntlm::cntlm_passntlmv2: ~
 cntlm::cntlm_workstation: ~
 cntlm::cntlm_noproxy: 'localhost, 127.0.0.*, 10.*, 192.168.*'
-cntlm::cntlm_listen: '3128'
+cntlm::cntlm_listen:
+  - '3128'
 cntlm::cntlm_socks5proxy: ~
 cntlm::cntlm_socks5user: ~
 cntlm::cntlm_auth: ~

@@ -32,7 +32,9 @@ NoProxy	<%= $cntlm::cntlm_noproxy %>
 
 <% } -%>
 <% unless $cntlm::cntlm_listen =~ Undef { -%>
-Listen	<%= $cntlm::cntlm_listen %>
+<% $cntlm::cntlm_listen.each |$listen| { -%>
+Listen	<%= $listen %>
+<% } -%>
 
 <% } -%>
 <% unless $cntlm::cntlm_socks5proxy =~ Undef { -%>
@@ -89,5 +91,4 @@ Header <%= $header %>
 <% $cntlm::cntlm_tunnel.each |$tunnel| { -%>
 Tunnel <%= $tunnel %>
 <% } -%>
-
 <% } -%>
