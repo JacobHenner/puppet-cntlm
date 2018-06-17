@@ -5,10 +5,6 @@
 # @summary Manages the cntlm service
 #
 class cntlm::service {
-    if ! ($cntlm::service_ensure in [ 'running', 'stopped' ]) {
-        fail('service_ensure parameter must be running or stopped')
-    }
-
     if $cntlm::service_manage == true {
     service { 'cntlm':
       ensure     => $cntlm::service_ensure,
